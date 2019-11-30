@@ -1,8 +1,8 @@
 // Copyright 2018 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:english_words/english_words.dart';
 
 void main() => runApp(MyApp());
@@ -10,7 +10,7 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return CupertinoApp(
       title: 'Startup Name Generator',
       home: RandomWords(),
     );
@@ -41,11 +41,11 @@ class RandomWordsState extends State<RandomWords> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Startup Name Generator'),
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text('Startup Name Generator'),
       ),
-      body: _buildSuggestions(),
+      child: Scaffold(body: _buildSuggestions()),
     );
   }
 }
